@@ -1,0 +1,109 @@
+Afrikaans 0
+Amharic 1
+Aragonese 2
+Arabic 3
+Assamese 4
+Azerbaijani 5
+Bashkir 6
+Bulgarian 7
+Bengali 8
+Bishnupriya Manipuri 9
+Bosnian 10
+Catalan 11
+Chinese (Mandarin) 12
+Czech 13
+Welsh 14
+Danish 15
+German 16
+Greek 17
+English (Caribbean) 18
+English (Great Britain) 19
+English (Scotland) 20
+English (Lancaster) 21
+English (West Midlands) 22
+English (Received Pronunciation) 23
+English (America) 24
+Esperanto 25
+Spanish (Spain) 26
+Spanish (Latin America) 27
+Estonian 28
+Basque 29
+Persian 30
+Persian (Pinglish) 31
+Finnish 32
+French (Belgium) 33
+French (Switzerland) 34
+French (France) 35
+Gaelic (Irish) 36
+Gaelic (Scottish) 37
+Guarani 38
+Greek (Ancient) 39
+Gujarati 40
+Hakka Chinese 41
+Hindi 42
+Croatian 43
+Haitian Creole 44
+Hungarian 45
+Armenian (East Armenia) 46
+Armenian (West Armenia) 47
+Interlingua 48
+Indonesian 49
+Icelandic 50
+Italian 51
+Japanese 52
+Lojban 53
+Georgian 54
+Kazakh 55
+Greenlandic 56
+Kannada 57
+Korean 58
+Konkani 59
+Kurdish 60
+Kyrgyz 61
+Latin 62
+Lingua Franca Nova 63
+Lithuanian 64
+Latvian 65
+Māori 66
+Macedonian 67
+Malayalam 68
+Marathi 69
+Malay 70
+Maltese 71
+Myanmar (Burmese) 72
+Norwegian Bokmål 73
+Nahuatl (Classical) 74
+Nepali 75
+Dutch 76
+Oromo 77
+Oriya 78
+Punjabi 79
+Papiamento 80
+Polish 81
+Portuguese (Portugal) 82
+Portuguese (Brazil) 83
+Pyash 84
+K'iche' 85
+Romanian 86
+Russian 87
+Russian (Latvia) 88
+Sindhi 89
+Shan (Tai Yai) 90
+Sinhala 91
+Slovak 92
+Slovenian 93
+Albanian 94
+Serbian 95
+Swedish 96
+Swahili 97
+Tamil 98
+Telugu 99
+Setswana 100
+Turkish 101
+Tatar 102
+Urdu 103
+Uzbek 104
+Vietnamese (Northern) 105
+Vietnamese (Central) 106
+Vietnamese (Southern) 107
+Chinese (Cantonese) 108

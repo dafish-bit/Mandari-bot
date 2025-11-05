@@ -1,7 +1,7 @@
 import google.generativeai as genai
 from sqlalchemy import create_engine, Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
-
+from llama_cpp import Llama
 hyper_secret_token = open("../fila.txt", 'r')
 tokin = hyper_secret_token.read()
 
@@ -44,4 +44,3 @@ def responde_gemini(que_cosa, quien):
 
 
     return returnable
-
