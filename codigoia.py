@@ -1,9 +1,10 @@
 import discord
-from discord.ext import commands
+from discord.ext import commands, tasks
 from Angel.pan import analize_THIS
 from ia_detect_animal.pan import Que_animal_seraaa
 from codigoGPT import *
-
+from game.game import *
+import io, asyncio
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -51,10 +52,28 @@ async def Pipu_ai(ctx, que_dijo="El chistosito que llamo este comando y me despe
     who_this = ctx.author
     try:
         await ctx.send(responde_gemini(str(que_dijo), str(who_this)))
-    except:
-        await ctx.send('Ni idea. \n Solo entiendo cosas entre comillas \n Como esto: ($Pipu_ai "Hola como estas")')
-hyper_secret_token = open("../cloro.txt", 'r')
+    except Exception as e:
+        await ctx.send(f'Ni idea. \n Solo entiendo cosas entre comillas \n Como esto: ($Pipu_ai "Hola como estas") \n a y tambien {e}')
+@bot.command()
+async def dou(ctx, act="nothing"):
+    with io.BytesIO() as ib:
+        sendable = dou_exist(act)
+        sendable.save(ib, "PNG")
+        ib.seek(0)
+        
+        discord_file = discord.File(fp=ib, filename='douuu.png')
+        
 
+        await ctx.send(file=discord_file)
+        if 
+        await ctx.send(f"Hambre:{100-hunger} \n Sed:{100-thirst}, \n Diverticion:{fun}, \n Sueño:{100-not_tired}")
+@tasks.loop(seconds=1)
+async def dou_loop():
+    dou_exist()
+    await asyncio.sleep(1)
+#####################################
+hyper_secret_token = open("../cloro.txt", 'r')
 bot.run(hyper_secret_token.read())
+#####################################
 #hola
 #chao :p

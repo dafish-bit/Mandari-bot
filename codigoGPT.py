@@ -1,11 +1,10 @@
-import google.generativeai as genai
+from google import genai
 from sqlalchemy import create_engine, Column, Integer, String, Text, ForeignKey
 from sqlalchemy.orm import sessionmaker, declarative_base, relationship
-from llama_cpp import Llama
 hyper_secret_token = open("../fila.txt", 'r')
 tokin = hyper_secret_token.read()
 
-genai.configure(api_key=f"{tokin}")
+
 
 engine = create_engine('sqlite:///discord_chat_log.db')  
 Base = declarative_base()
@@ -25,7 +24,7 @@ class Chat_log(Base):
 
 
 
-model = genai.GenerativeModel('gemini-2.5-flash-lite')
+client = genai.Client(api_key=f"{tokin}")
 #Base.metadata.create_all(engine)
 def responde_gemini(que_cosa, quien):  
     try:
@@ -37,7 +36,11 @@ def responde_gemini(que_cosa, quien):
         que_cosa = strial + f" Esta la pregunta nueva: {que_cosa}"
     except Exception as E:
         print(E) #Si no esta roto no lo arregles, verdad? 
-    returnable = model.generate_content(str(que_cosa)).text
+    returnable = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents=que_cosa,
+    )
+
     nuevo_log = Chat_log(question=que_cosa, answer=returnable, user=quien) 
     db_session.add(nuevo_log)
     db_session.commit()
