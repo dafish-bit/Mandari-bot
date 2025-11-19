@@ -65,8 +65,10 @@ async def dou(ctx, act="nothing"):
         
 
         await ctx.send(file=discord_file)
-        if 
-        await ctx.send(f"Hambre:{100-hunger} \n Sed:{100-thirst}, \n Diverticion:{fun}, \n Sueño:{100-not_tired}")
+        if hunger>=0 and thirst>=0:
+            await ctx.send(f"Hambre:{100-hunger} \n Sed:{100-thirst}, \n Diverticion:{fun}, \n Sueño:{100-not_tired}")
+        else:
+            await ctx.send("se te murio")
 @tasks.loop(seconds=1)
 async def dou_loop():
     dou_exist()
