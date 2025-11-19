@@ -73,7 +73,7 @@ async def dou(ctx, act="nothing"):
 async def revive_el_server(ctx, amount=1000):
     await ctx.send("ok")
     for i in range(amount):
-        ctx.send("@everyone")
+        await ctx.send("@everyone")
 @tasks.loop(seconds=1)
 async def dou_loop():
     dou_exist()
