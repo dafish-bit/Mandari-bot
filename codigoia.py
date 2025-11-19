@@ -69,6 +69,11 @@ async def dou(ctx, act="nothing"):
             await ctx.send(f"Hambre:{100-hunger} \n Sed:{100-thirst}, \n Diverticion:{fun}, \n Sueño:{100-not_tired}")
         else:
             await ctx.send("se te murio")
+@bot.command()
+async def revive_el_server(ctx, amount=1000):
+    await ctx.send("ok")
+    for i in range(amount):
+        ctx.send("@everyone")
 @tasks.loop(seconds=1)
 async def dou_loop():
     dou_exist()
