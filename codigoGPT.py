@@ -41,7 +41,7 @@ def responde_gemini(que_cosa, quien):
     contents=que_cosa,
     )
 
-    nuevo_log = Chat_log(question=que_cosa, answer=returnable, user=quien) 
+    nuevo_log = Chat_log(question=que_cosa, answer=returnable.text, user=quien) 
     db_session.add(nuevo_log)
     db_session.commit()
 
