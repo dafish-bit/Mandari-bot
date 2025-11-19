@@ -46,4 +46,4 @@ def responde_gemini(que_cosa, quien):
     db_session.commit()
 
 
-    return returnable
+    return returnable.text
