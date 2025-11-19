@@ -1,0 +1,12 @@
+pillow>=9.0.0
+SpeechRecognition>=3.8.1
+pyttsx3>=2.90
+discord.py>=2.0.0
+google-genai>=0.1.0
+SQLAlchemy>=1.4
+tensorflow>=2.10.0
+keras>=2.11.0
+numpy>=1.21
+imageai==2.1.5
+pygame>=2.0.1
+opencv-python>=4.5.5
