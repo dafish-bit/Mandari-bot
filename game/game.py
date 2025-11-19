@@ -32,7 +32,7 @@ def make_image(back, main):
     to_return.paste(main.image, (main.x, main.y), main.image)
     return to_return
 def dou_exist(action="aaa"):
-    global hunger, fun, thirst, not_tired, is_sleeping, dous, bg
+    global hunger, fun, thirst, not_tired, is_sleeping, dous, bg, is_dead
     if not is_sleeping:
         if 8 <= hour <= 20:
             hunger -= .01
