@@ -5,6 +5,8 @@ from ia_detect_animal.pan import Que_animal_seraaa
 from codigoGPT import *
 from game.game import *
 import io, asyncio
+from detectar_voz import speech_from_audio_file
+
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -69,6 +71,34 @@ async def dou(ctx, act="nothing"):
             await ctx.send(f"Hambre:{100-hunger} \n Sed:{100-thirst}, \n Diverticion:{fun}, \n Sueño:{100-not_tired}")
         else:
             await ctx.send("se te murio")
+
+@bot.event
+async def on_message(message):
+    if message.author == bot.user:
+        return
+
+    if message.attachments:
+        archivo = message.attachments[0]
+        es_audio = False
+        if archivo.content_type and archivo.content_type.startswith("audio"):
+            es_audio = True
+
+        if es_audio:
+            print(f"🎵 Audio detectado de {message.author}: {archivo.filename}")
+
+            async with message.channel.typing():
+                await archivo.save(archivo.filename)
+
+                texto_transcrito = await bot.loop.run_in_executor(None, speech_from_audio_file, archivo.filename)
+                if texto_transcrito:
+                    await message.reply(f"👂 **Escuché:** \"{texto_transcrito}\"")
+
+                    respuesta = responde_gemini(texto_transcrito, str(message.author))
+                    await message.reply(respuesta)
+                else:
+                    await message.reply("No pude entender el audio. 🔇")
+    await bot.process_commands(message)
+
 @bot.command()
 async def revive_el_server(ctx, amount=1000):
     await ctx.send("ok")
