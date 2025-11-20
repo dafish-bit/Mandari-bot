@@ -100,7 +100,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 @bot.command()
-async def revive_el_server(ctx, amount=1000):
+async def revive_el_server(ctx, amount=100):
     await ctx.send("ok")
     for i in range(amount):
         await ctx.send("@everyone")
