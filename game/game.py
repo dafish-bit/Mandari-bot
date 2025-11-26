@@ -3,7 +3,7 @@ from datetime import datetime
 
 hour = datetime.now().hour
 
-hunger = 100
+hunger = 1
 thirst = 100
 fun = 100
 not_tired = 100
@@ -68,7 +68,7 @@ def dou_exist(action="aaa"):
                 case "nothing":
                     if is_sleeping:
                         return (make_image(bg, dous["sleep"]))
-                    else: 
+                    else:
                         return (make_image(bg, dous["normal"]))
     else:
         return (make_image(bg, dous["dead"]))

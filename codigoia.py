@@ -3,7 +3,8 @@ from discord.ext import commands, tasks
 from Angel.pan import analize_THIS
 from ia_detect_animal.pan import Que_animal_seraaa
 from codigoGPT import *
-from game.game import *
+import game.game as game_module
+from game.game import dou_exist
 import io, asyncio
 from detectar_voz import speech_from_audio_file
 
@@ -67,8 +68,8 @@ async def dou(ctx, act="nothing"):
         
 
         await ctx.send(file=discord_file)
-        if hunger>=0 and thirst>=0:
-            await ctx.send(f"Hambre:{100-hunger} \n Sed:{100-thirst}, \n Diverticion:{fun}, \n Sueño:{100-not_tired}")
+        if game_module.hunger>=0 and game_module.thirst>=0:
+            await ctx.send(f"Hambre:{100-game_module.hunger} \n Sed:{100-game_module.thirst}, \n Diverticion:{game_module.fun}, \n Sueño:{100-game_module.not_tired}")
         else:
             await ctx.send("se te murio")
 
