@@ -7,7 +7,7 @@ import game.game as game_module
 from game.game import dou_exist
 import io, asyncio
 from detectar_voz import speech_from_audio_file
-
+from voz_Ia import texto_ia
 intents = discord.Intents.default()
 intents.message_content = True
 
@@ -57,6 +57,18 @@ async def Pipu_ai(ctx, que_dijo="El chistosito que llamo este comando y me despe
         await ctx.send(responde_gemini(str(que_dijo), str(who_this)))
     except Exception as e:
         await ctx.send(f'Ni idea. \n Solo entiendo cosas entre comillas \n Como esto: ($Pipu_ai "Hola como estas") \n a y tambien {e}')
+
+@bot.command()
+async def Voz_Ai(ctx, que_dijo="El chistosito que llamo este comando y me desperdicio un token de gemini no puso nada."):
+    who_this = ctx.author
+    try:
+        await texto_ia(responde_gemini(str(que_dijo), str(who_this)))
+        with open('audio/audio.mp3', 'rb') as f:
+            audio = discord.File(f)
+        await ctx.send(file=audio)
+    except Exception as e:
+        await ctx.send(f'Ni idea. \n Solo entiendo cosas entre comillas \n Como esto: ($Pipu_ai "Hola como estas") \n a y tambien {e}')
+
 @bot.command()
 async def dou(ctx, act="nothing"):
     with io.BytesIO() as ib:
