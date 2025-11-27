@@ -62,9 +62,10 @@ async def Pipu_ai(ctx, que_dijo="El chistosito que llamo este comando y me despe
 async def Voz_Ai(ctx, que_dijo="El chistosito que llamo este comando y me desperdicio un token de gemini no puso nada."):
     who_this = ctx.author
     try:
-        await texto_ia(responde_gemini(str(que_dijo), str(who_this)))
-        with open('audio/audio.mp3', 'rb') as f:
+        texto_ia(responde_gemini(str(que_dijo), str(who_this)))
+        with open('audio.mp3', 'rb') as f:
             audio = discord.File(f)
+            print(f"Enviando audio, tamaño: {f.tell()} bytes")
         await ctx.send(file=audio)
     except Exception as e:
         await ctx.send(f'Ni idea. \n Solo entiendo cosas entre comillas \n Como esto: ($Pipu_ai "Hola como estas") \n a y tambien {e}')
