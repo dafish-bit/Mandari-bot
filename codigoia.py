@@ -1,4 +1,4 @@
-import discord
+import discord, random
 from discord.ext import commands, tasks
 from Angel.pan import analize_THIS
 from ia_detect_animal.pan import Que_animal_seraaa
@@ -109,7 +109,7 @@ async def on_message(message):
                     respuesta = responde_gemini(texto_transcrito, str(message.author))
                     await message.reply(respuesta)
                 else:
-                    await message.reply("No pude entender el audio. 🔇")
+                    await message.reply("No se te entiende nada. Habla bien 🔇")
     await bot.process_commands(message)
 
 @bot.command()
@@ -117,6 +117,9 @@ async def revive_el_server(ctx, amount=100):
     await ctx.send("ok")
     for i in range(amount):
         await ctx.send("@everyone")
+@bot.command()
+async def necesitamos_tu_opinion(ctx, que=""):
+    ctx.send(f"{random.choice(["si", "no", "talvez"])}, {que}")
 @tasks.loop(seconds=1)
 async def dou_loop():
     dou_exist()
